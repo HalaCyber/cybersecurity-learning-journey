@@ -1,2 +1,28 @@
 Networks are simply things connected.
 
+The Internet is one giant network that consists of many, many small networks within itself. 
+
+These small networks are called private networks, where networks connecting these small networks are called public networks 
+
+Devices have two means of identification, with one being permeable( قابلة للاختراق ). These are:
+
+     * An IP Address (Internet Protocol) .
+     * A Media Access Control (MAC) Address -- think of this as being similar to a serial number.
+
+IP addresses can change from device to device but cannot be active simultaneously more than once within the same network.
+
+A public address is used to identify the device on the Internet, whereas a private address is used
+to identify a device amongst other devices.
+
+ Public IP addresses are given by your Internet Service Provider (or ISP) at a monthly fee (your bill!)
+
+ IPv4 ------> 32 bit  ------ Supports up to 2^32 of IP addresses .
+ IPv6 ------> 128 bit ------ Supports up to 2^128 of IP addresses .
+
+MAC Addresses : is a twelve-character the first six characters represent the company that made the network interface, and
+the last six is a unique number.
+
+ MAC addresses is that they can be faked or "spoofed" in a process known as spoofing.
+
+ Ping uses ICMP (Internet Control Message Protocol) packets .
+

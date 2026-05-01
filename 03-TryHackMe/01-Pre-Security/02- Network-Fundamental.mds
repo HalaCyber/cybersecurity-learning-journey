@@ -25,4 +25,27 @@ the last six is a unique number.
  MAC addresses is that they can be faked or "spoofed" in a process known as spoofing.
 
  Ping uses ICMP (Internet Control Message Protocol) packets .
+--------------------------------------------------
+Local Area Network (LAN) Topologies :
+
+ *Star Topology :
+ --->The main premise of a star topology is that devices are individually connected via a central networking device
+     such as a switch or hub. 
+ --->it is more expensive .
+ ---> it is very easy to add more devices as the demand for the network increases.
+ *Bus Topology :
+ --->This type of connection relies upon a single connection which is known as a backbone cable. 
+ *Ring Topology :
+ ---> (also known as token topology)Devices such as computers are connected directly
+      to each other to form a loop.
+ --->ring topologies are less prone to bottlenecks, such as within a bus topology.
+ --->a fault such as cut cable, or broken device will result in the entire networking breaking.
+
+-------------------------------------------------------
+Switch : designed to aggregate multiple other devices such as computers, printers, or
+any other networking-capable device using ethernet.
+
+ Router :  to connect networks and pass data between them .
+
+
 

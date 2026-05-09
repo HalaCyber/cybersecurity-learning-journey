@@ -46,6 +46,33 @@ Switch : designed to aggregate multiple other devices such as computers, printer
 any other networking-capable device using ethernet.
 
  Router :  to connect networks and pass data between them .
+---------------------------------------------------------
+subnetting :
+is the term given to splitting up a network into smaller, miniature networks within itself.
+
+*Subnetting is achieved by splitting up the number of hosts that can fit within the network, represented
+by a number called a subnet mask.
+
+*subnet mask which is also represented as a number of four bytes (32 bits), ranging from 0 to 255 (0-255).
+
+*Network Address :
+ This address identifies the start of the actual network and is used to identify a network's existence.
+*Host Address :
+ An IP address here is used to identify a device on the subnet .
+ is used to identify devices within a network .
+*Default Gateway :
+ The default gateway address is a special address assigned to a device on the network that is  
+ capable of sending information to another network .
+
+-------------------------
+ARP :   Address Resolution Protocol
+is the technology that is responsible for allowing devices to identify themselves on a network.
+
+
+
+
+
+
 
 
 

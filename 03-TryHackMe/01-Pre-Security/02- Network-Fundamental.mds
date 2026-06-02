@@ -81,13 +81,40 @@ DHCP: Dynamic Host Configuration Protocol
   address by the DHCP server .
 * DHCP ACK : is the last DHCP packet that is sent to a device from a DHCP server .
 ----------------------------------------
-OSI Model :
+OSI Model : Open Systems Interconnection Model
 ----
-
-
-
-
-
-
+*   This critical model provides a framework dictating how all networked devices will send, receive
+    and interpret data.
+* encapsulation :  is the key term for when pieces of information get added to data .
+*  the OSI model looks like in the diagram below:
+          7 - Application 
+*
+          6 - Presentation
+*
+          5 - Session
+*
+          4 - Transport 
+*
+          3 - Network
+*  is where the magic of routing & re-assembly of data takes place
+*  Whilst some protocols at this layer determine exactly what is the "optimal" path that
+   data should take to reach a device such as (OSPF  (Open Shortest Path First) & RIP (Routing Information Protocol) )
+*  The factors that decide what route is taken is decided by the following:
+        * What path is the shortest? 
+        * What path is the most reliable?
+        * Which path has the faster physical connection
+          copper connection (slower) or a fibre (considerably faster)?
+*  everything is dealt with via IP addresses
+          2 - Data Link
+*  focuses on the physical addressing of the transmission. 
+*  It receives a packet from the network layer (including the IP address ) and adds 
+   in the physical MAC ) address
+*   Inside every network-enabled computer is a Network Interface Card (NIC) which comes 
+    with a unique MAC address to identify it.
+          1 - Physical 
+*  this layer references the physical components of the hardware used in networking
+*  Devices use electrical signals to transfer data between each other in a binary 
+   numbering system (1's and 0's).
+*  Ethernet Cables :  is the name of the cables that are used to connect devices .
 
 

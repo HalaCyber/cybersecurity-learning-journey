@@ -94,7 +94,18 @@ OSI Model : Open Systems Interconnection Model
           5 - Session
 *
           4 - Transport 
-*
+*  plays a vital part in transmitting data across a network 
+*  When data is sent between devices, it follows one of two different protocols that are
+   decided based upon several factors:
+           ---->TCP ( Transmission Control Protocol) this protocol is designed with reliability and guarantee
+               * TCP is significantly slower than UDP 
+               * is used for situations such as file sharing, internet browsing or sending an email
+               * downloads files 
+           ---->UDP (User Datagram Protocol) doesn't care if the data is received.
+               * UDP is much faster than TCP .
+               * useful in situations where there are small pieces of data being sent (ARP & DHCP)
+               * larger files such as video streaming 
+*  
           3 - Network
 *  is where the magic of routing & re-assembly of data takes place
 *  Whilst some protocols at this layer determine exactly what is the "optimal" path that

@@ -88,11 +88,19 @@ OSI Model : Open Systems Interconnection Model
 * encapsulation :  is the key term for when pieces of information get added to data .
 *  the OSI model looks like in the diagram below:
           7 - Application 
-*
+*  the application layer is the layer in which protocols and rules are in place to determine
+   how the user should interact with data sent or received.
+*   Graphical User Interface (GUI) for users to interact with data sent or received. Other protocols include DNS (Domain Name System),which is 
+    how website addresses are translated into IP addresses.
           6 - Presentation
-*
+*  This layer acts as a translator for data to and from the application layer (layer 7) .
+*  
           5 - Session
-*
+*  The session layer is also responsible for closing the connection if it hasn't been used 
+   in a while or if it is lost.
+*  a session can contain "checkpoints," where if the data is lost, only the newest
+   pieces of data are required to be sent .
+*  sessions are unique — meaning that data cannot travel over different sessions.
           4 - Transport 
 *  plays a vital part in transmitting data across a network 
 *  When data is sent between devices, it follows one of two different protocols that are

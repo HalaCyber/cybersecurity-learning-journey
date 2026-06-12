@@ -135,5 +135,13 @@ OSI Model : Open Systems Interconnection Model
 *  Devices use electrical signals to transfer data between each other in a binary 
    numbering system (1's and 0's).
 *  Ethernet Cables :  is the name of the cables that are used to connect devices .
+________________________________________________________________________________
+* Packets and frames :
+----------------------
+* A packet is a piece of data from Layer 3 (Network Layer) of the OSI model, containing information
+  such as an IP header and payload.
+* A frame, however, is used at Layer 2 (Data Link) of the OSI model, which, encapsulates the packet and
+  adds additional information such as MAC addresses.
+*    
 
 

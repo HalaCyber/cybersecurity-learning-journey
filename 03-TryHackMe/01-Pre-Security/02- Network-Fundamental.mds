@@ -142,6 +142,36 @@ ________________________________________________________________________________
   such as an IP header and payload.
 * A frame, however, is used at Layer 2 (Data Link) of the OSI model, which, encapsulates the packet and
   adds additional information such as MAC addresses.
-*    
-
-
+* The envelope :  is a frame, which, is used to move the contents of the envelope to another place.     
+* Time to Live :	This field sets an expiry timer for the packet to not clog up
+  your network if it never manages to reach a host or escape!
+* Checksum : This field provides integrity checking for protocols such as TCP/IP. If any data is changed, this value will be 
+  different from what was expected and therefore corrupt.
+* source address 
+* destination address
+_______________________________________________________________________________
+TCP (Transmission Control Protocol )/IP (The Three-WAY Handshake) :
+-------------------------------------------------------------------
+This protocol is very similar to the OSI model 
+The TCP/IP protocol consists of four layers and is arguably just a summarised
+version of the OSI model. These layers are:
+    Application
+    Transport
+    Internet
+    Network Interface
+*  it is connection-based, which means that TCP must establish a connection between both a client and a device
+   acting as a server before data is sent.
+*  Advantages of TCP :
+   --> Guarantees the integrity of data.
+   --> Capable of synchronising two devices to prevent each other from being flooded with data in the wrong order.
+   --> Performs a lot more processes for reliability .
+*  Disadvantages of TCP :
+   --> Requires a reliable connection between the two devices. 
+   --> A slow connection can bottleneck another device
+   --> TCP  is significantly slower than UDP
+* packets contain various sections of information known as headers that are added from encapsulation:
+  --> source port - destination port - source ip - dstination ip - sequence number - acknowledgement number - checksum 
+    data - flag .
+*  Three-way handshake :
+-----------------------
+Because of this,TCP guarantees that any data sent will be received on the other end.

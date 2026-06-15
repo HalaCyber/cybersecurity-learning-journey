@@ -175,3 +175,27 @@ version of the OSI model. These layers are:
 *  Three-way handshake :
 -----------------------
 Because of this,TCP guarantees that any data sent will be received on the other end.
+* checksum : is the header in a TCP packet that ensures the integrity of data
+* SYN : This packet is used to initiate a connection and synchronise the two devices together 
+* SYN/ACK : This packet is sent by the receiving device (server) to acknowledge the 
+  synchronisation attempt from the client.
+* ACK :  used by either the client or server to acknowledge that a series of messages/packets
+  have been successfully received.
+* FIN : This packet is used to cleanly (properly) close the connection
+  after it has been complete.
+* RST : 	This packet abruptly ends all communication.
+-------------------------------------------------------
+* UDP(User Datagram Protocol) / IP :
+------------------------------------
+* is another protocol that is used to communicate data between devices.
+* Unlike its brother TCP ,UDP is a stateless protocol that doesn't require a constant
+  connection between the two devices for data to be sent. For example, the Three-way 
+  handshake does not occur, nor is there any synchronisation between the two devices.
+* TCP stateful - UDP stateless
+----------------------------------
+* port 101 (practical):
+-----------------------
+
+ 
+
+

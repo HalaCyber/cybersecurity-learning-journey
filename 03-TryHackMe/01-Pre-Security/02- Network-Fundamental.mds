@@ -195,7 +195,12 @@ Because of this,TCP guarantees that any data sent will be received on the other 
 ----------------------------------
 * port 101 (practical):
 -----------------------
-
- 
+* File Transfer Protocol (FTP) :
+  This protocol is used by a file-sharing application built on a client-server model, 
+  meaning you can download files from acentral location.
+* Secure Shell (ssh) :
+  This protocol is used to securely login to systems via a text-based
+  interface for management.
+* HyperText Transfer Protocol (HTTP) :
 
 

@@ -195,12 +195,52 @@ Because of this,TCP guarantees that any data sent will be received on the other 
 ----------------------------------
 * port 101 (practical):
 -----------------------
-* File Transfer Protocol (FTP) :
+* File Transfer Protocol (FTP)21 :
   This protocol is used by a file-sharing application built on a client-server model, 
   meaning you can download files from acentral location.
-* Secure Shell (ssh) :
+* Secure Shell (ssh)22 :
   This protocol is used to securely login to systems via a text-based
   interface for management.
-* HyperText Transfer Protocol (HTTP) :
+* HyperText Transfer Protocol (HTTP)80 :
+  This protocol powers the World Wide Web (WWW)! Your browser uses this to download
+  text, images and videos of web pages.
+* HyperText Transfer Protocol Secure (HTTPS)443 :
+* Server Message Block (SMB)445 :
+  allows you to share devices like printers.This protocol is similar to the(FTP)
+* Remote Desktop Protocol (RDP)3389:
+  This protocol is a secure means of logging in to a system using a visual desktop interface .
+**We have only briefly covered the more common protocols in cybersecurity. **
+---------------------------------------------------------------------------------------------
+* Extending Your Network :
+--------------------------
+Firewall :  is a device within a network responsible for determining what traffic 
+is allowed to enter and exit.  Think of aFirewall as border security for a network.
+An administrator can configure afirewall to permit or deny traffic from entering or exiting a network .
+* Firewalls perform packet inspection to determine the answers to these questions:
+  -->Where the traffic is coming from?
+  -->Where is the traffic going to?
+  -->What port is the traffic for? 
+  -->What protocol is the traffic using?
+* Firewalls come in all shapes and sizes. From dedicated pieces of hardware 
+  (often found in large networks like businesses) that can handle a magnitude of 
+  data to residential routers (like at your home!) or software such as Snort (opens in new tab), firewalls 
+  can be categorised into 2 to 5 categories.
+* firewall Category :
+  --> Stateful متتبع الحالة :
+     this firwall determines the behaviour of a device based upon the entire connection.
+     If a connection from a host is bad, it will block the entire device.
+  --> Stateless عديم الحالة :
+     a device sending a bad packet will not necessarily mean that the entire 
+     device is then blocked.
+     Whilst these firewalls use much fewer resources .
+     ese firewalls are only effective as the rules that are defined within them.
+     these firewalls are great when receiving large amounts of traffic from a set of hosts (such as a Distributed
+     Denial-of-Service attack) .
+     inspects individual packets .
+* What layers of the OSI model do firewalls operate at? Network $  Transport 
+------------------
+VPN :
+----
 
-
+     
+     

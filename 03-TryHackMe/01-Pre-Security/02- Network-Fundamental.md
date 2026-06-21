@@ -307,3 +307,4 @@ A VPN creates a secure encrypted connection (tunnel) between devices over the in
 A VLAN divides a physical network into multiple logical networks.
 
 It helps improve security and performance by separating traffic.
+

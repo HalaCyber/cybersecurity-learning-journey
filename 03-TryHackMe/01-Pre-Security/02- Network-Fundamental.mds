@@ -243,5 +243,33 @@ VPN : Virtual Private Network
 ----
  is a technology that allows devices on separate networks to communicate securely by creating a dedicated path between each 
  other over the Internet (known as a tunnel).
-     
-     
+* Benefit VPN :
+--->Allows networks in different geographical locations to be connected.
+--->Offers privacy.
+--->Offers anonymity.
+*  explore some existing VPN  technologies below :
+--> PPP : PPP (Point-to-Point Protocol)
+   -This technology is used by PPTP to allow for authentication and provide encryption of data. 
+   -non-routable
+   -VPN technology only encrypts & provides the authentication of data
+-->PPTP (Point-to-Point Tunneling Protocol) :
+   -is the technology that allows the data from PPP to travel and leave a network.
+   -is very easy to set up and is supported by most devices.
+   -weakly encrypted in comparison to alternatives.
+-->IPSec (Internet Protocol Security) :
+   - is difficult to set up in comparison to alternatives
+----------------------------------------------------------------------
+LAN Ntworking Dvices :
+---------------------
+* Routing is the label given to the process of data travelling across networks. 
+Routing involves creating a path between networks so that this data can be successfully delivered.
+Routers operate at Layer 3 of the OSI model. They often feature an interactive interface
+(such as a website or a console) that allows an administrator to configure various rules 
+such as port forwarding or firewalling.
+* A switch is a dedicated networking device responsible for providing a means of connecting to multiple devices. 
+Switches can operate at both layer 2 and layer 3 of the OSI model. However, these are exclusive in the 
+sense that Layer 2 switches cannot operate at layer 3.
+* A technology called VLAN (Virtual Local Area Network) allows specific devices within a network to be virtually split up.
+This split means they can all benefit from things such as an Internet connection but are treated separately. This network separation provides security because it means 
+that rules in place determine how specific devices communicate with each other. 
+-----------------------------------------------------------

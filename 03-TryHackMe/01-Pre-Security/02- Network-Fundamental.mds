@@ -239,8 +239,9 @@ An administrator can configure afirewall to permit or deny traffic from entering
      inspects individual packets .
 * What layers of the OSI model do firewalls operate at? Network $  Transport 
 ------------------
-VPN :
+VPN : Virtual Private Network
 ----
-
+ is a technology that allows devices on separate networks to communicate securely by creating a dedicated path between each 
+ other over the Internet (known as a tunnel).
      
      

@@ -98,3 +98,65 @@ In this example:
 
 ### Key Takeaway
 Subdomains help organize and separate services within the same domain while remaining part of the main website.
+
+## DNS Record Types
+
+DNS uses different types of records to provide specific information about a domain and its services.
+
+### A Record
+
+An A (Address) Record maps a domain name to an IPv4 address.
+
+**Example:**
+- tryhackme.com → 104.26.10.229
+
+### AAAA Record
+
+An AAAA Record maps a domain name to an IPv6 address.
+
+**Example:**
+- tryhackme.com → 2606:4700:20::681a:be5
+
+### CNAME Record
+
+A CNAME (Canonical Name) Record maps one domain name to another domain name instead of directly to an IP address.
+
+**Example:**
+- store.tryhackme.com → shops.shopify.com
+
+When a client receives a CNAME record, it must perform another DNS lookup to find the IP address of the target domain.
+
+### MX Record
+
+An MX (Mail Exchange) Record specifies the mail servers responsible for handling email for a domain.
+
+**Example:**
+- tryhackme.com → alt1.aspmx.l.google.com
+
+MX records include a **priority value**, which determines the order in which mail servers should be used. If the primary mail server is unavailable, email can be delivered to a backup server.
+
+### TXT Record
+
+TXT Records store text-based information associated with a domain.
+
+Common uses include:
+- Email authentication (SPF, DKIM, DMARC)
+- Domain ownership verification
+- Security and anti-spoofing configurations
+
+**Examples:**
+- Verifying domain ownership
+- Defining authorized email servers
+- Configuring DMARC policies
+
+### Key Takeaway
+
+Different DNS record types serve different purposes:
+
+| Record | Purpose |
+|----------|----------|
+| A | Domain → IPv4 Address |
+| AAAA | Domain → IPv6 Address |
+| CNAME | Domain → Another Domain |
+| MX | Email Server |
+| TXT | Text, Verification, and Security Information |

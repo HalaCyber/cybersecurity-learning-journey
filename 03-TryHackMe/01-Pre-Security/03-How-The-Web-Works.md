@@ -4,6 +4,9 @@
 
 DNS provides an easy way to access websites by translating domain names into IP addresses. Instead of remembering numerical IP addresses, users can use simple and memorable domain names such as tryhackme.com.
 
+**Example:**
+- tryhackme.com → 104.26.10.229
+
 ## Top-Level Domain (TLD)
 
 A Top-Level Domain (TLD) is the rightmost part of a domain name, such as `.com` or `.org`.
@@ -167,6 +170,8 @@ When a user requests a domain name, the computer first checks its local cache to
 
 If the record is not found locally, the request is sent to a **Recursive DNS Server**, which also checks its own cache for a stored result.
 
+A Recursive DNS Server is usually provided by an ISP, but users can also choose alternative DNS providers.
+
 If no cached result exists, the Recursive Server begins a DNS lookup process:
 
 1. **Root Server**
@@ -190,14 +195,14 @@ Caching improves performance by reducing the number of DNS requests needed for f
 
 ### DNS Lookup Flow
 
-Client
-→ Local Cache
-→ Recursive DNS Server
-→ Root Server
-→ TLD Server
-→ Authoritative Server
-→ DNS Record Response
-→ Client
+1. Client
+2. Local Cache
+3. Recursive DNS Server
+4. Root Server
+5. TLD Server
+6. Authoritative Server
+7. DNS Record Response
+8. Client
 
 ### Key Takeaway
 

@@ -160,3 +160,45 @@ Different DNS record types serve different purposes:
 | CNAME | Domain → Another Domain |
 | MX | Email Server |
 | TXT | Text, Verification, and Security Information |
+
+## What Happens When You Make a DNS Request?
+
+When a user requests a domain name, the computer first checks its local cache to see if the address has been looked up recently.
+
+If the record is not found locally, the request is sent to a **Recursive DNS Server**, which also checks its own cache for a stored result.
+
+If no cached result exists, the Recursive Server begins a DNS lookup process:
+
+1. **Root Server**
+   - Directs the request to the correct Top-Level Domain (TLD) server.
+
+2. **TLD Server**
+   - Identifies the authoritative server responsible for the requested domain.
+
+3. **Authoritative Server**
+   - Stores the DNS records for the domain and returns the requested record (such as an IP address).
+
+The result is then sent back to the Recursive Server, cached for future requests, and finally returned to the client.
+
+### Time To Live (TTL)
+
+DNS records contain a TTL (Time To Live) value, measured in seconds.
+
+TTL determines how long a DNS response should remain cached before a new lookup is required.
+
+Caching improves performance by reducing the number of DNS requests needed for frequently visited websites.
+
+### DNS Lookup Flow
+
+Client
+→ Local Cache
+→ Recursive DNS Server
+→ Root Server
+→ TLD Server
+→ Authoritative Server
+→ DNS Record Response
+→ Client
+
+### Key Takeaway
+
+DNS uses a hierarchical lookup process to find the correct record for a domain. Caching and TTL help speed up future requests and reduce unnecessary traffic.

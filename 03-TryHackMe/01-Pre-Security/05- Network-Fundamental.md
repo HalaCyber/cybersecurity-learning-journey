@@ -1,4 +1,4 @@
-# Module 2 - Network Fundamentals
+# Module 5 - Network Fundamentals
 
 ## What is a Network?
 

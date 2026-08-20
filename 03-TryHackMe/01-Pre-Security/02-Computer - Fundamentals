@@ -6,3 +6,20 @@ objects, from kitchen appliances to doorbells.
 2-desktop :A computer designed to stay in one place, usually with better performance and cooling than a laptop
 3-workstation :A powerful computer designed for professional and heavy tasks such as 3D modeling and simulations
 4-server:A computer that provides services, data, or resources to many users or other computers over a network
+*  computers hiding in everyday objects:
+---Smartphone: A pocket-sized computer designed for connectivity and battery life.
+---Tablet: A computer with a larger, touch-focused screen.
+---IoT Device: A network-connected device that performs a specific task and sends or receives data.
+---Embedded Computer: A small computer built into another device to perform a specific function
+*IoT vs. Embedded:
+IoT: A device + network connectivity.
+Embedded: A computer built into another device; it does not necessarily need network connectivity
+*IoT(Smart Thermostat-Smart Doorbell-Fitness Tracker)
+*Embedded(Automatic Door-Coffee Maker Controller-Automatic Door Sensor)
+*The most important computer is not always the fastest; it is the one that best fits the job.
+* These are examples of smart and connected computing devices used in everyday life
+(**Smart TV, robot vacuum, smartwatch, smart fridge, smart speaker, security camera, Wi-Fi router,
+thermostat**).
+*Laptops are portable but have limited cooling because of their small size. They use tiny fans, heat pipes, and heat sinks. Desktops are larger and stationary, so they can use large fans, better airflow, 
+and tower coolers for stronger cooling
+*Redundancy, backups, and monitoring keep servers running and reduce downtime.

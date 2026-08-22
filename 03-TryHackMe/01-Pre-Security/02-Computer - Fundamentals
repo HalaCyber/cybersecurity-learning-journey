@@ -23,3 +23,117 @@ thermostat**).
 *Laptops are portable but have limited cooling because of their small size. They use tiny fans, heat pipes, and heat sinks. Desktops are larger and stationary, so they can use large fans, better airflow, 
 and tower coolers for stronger cooling
 *Redundancy, backups, and monitoring keep servers running and reduce downtime.
+
+***Laptops throttle more than desktops because they have less cooling space, causing 
+heat to build up faster and the CPU to reduce its performance to prevent overheating.**
+
+*Server redundancy prevents a single point of failure by providing backup systems that can continue operating 
+if one system fails
+*Smartphones last longer on battery because their hardware and software 
+are optimized for energy efficienc
+*Workstations often use ECC RAM to improve reliability by detecting and correcting memory errors.
+*A smart home hub coordinates and connects multiple smart devices.
+
+*Client: A device or application that requests a service or resource.
+
+*Server: A device or application that provides a service or resource to clients.
+
+*Network: A group of connected devices that communicate and share data.
+
+*Port: A logical endpoint used to identify a specific service on a device.
+
+*Protocol: A set of rules that defines how devices communicate.
+
+*Client-Server Model: A model where a client requests a service and a server provides it
+
+*User uses the Client. The Client talks to the Server.
+*Protocol = Rules for communication between Client and Server.
+*A port identifies a specific service running on a server.
+*********************************
+**HTTP is a stateless protocol where each request is independent. HTTP methods define what the client wants to do, such as GET to retrieve data from the server.**
+
+HTTP is a stateless client-server protocol.
+Each request is processed independently.
+HTTP Methods define what the client wants to do.
+The most important one here is GET.
+GET is used to retrieve a resource from a server.
+When you enter a URL in a browser, the browser (client) sends a GET request to the server.
+The server sends back a response containing:
+Status Code → tells us if the request succeeded.
+Response Body → contains the requested content.
+Response Header → contains metadata about the response.
+200 OK means the request was successful.
+Important GET request fields:
+Scheme → HTTP or HTTPS
+Host → name of the host
+Filename → requested file/resource
+Address → server's IP address
+*****************************************
+*Virtualization allows multiple virtual machines to run on one physical machine.
+*Before virtualization, one physical server usually ran one application, causing high costs, low resource 
+utilization, slow deployment, and difficult scaling
+*Hypervisor allows multiple virtual machines to safely share the resources of one physical server
+*Hypervisor is software that creates and manages Virtual Machines (VMs).
+It divides a physical server's CPU, RAM, and storage between VMs and keeps them isolated.
+Type 1 Hypervisor runs directly on hardware and is mainly used in servers and data centers.
+Type 2 Hypervisor runs inside an existing OS and is mainly used for learning, testing, and home labs.
+A VM is a virtual computer with its own OS, CPU, RAM, storage, and network.
+Containers are lightweight environments that run applications while sharing the host's kernel.
+Containers use fewer resources and start faster than VMs.
+Docker is a platform used to build, deploy, and run container
+**************
+Virtualization allows one physical computer to run multiple virtual
+computers, improving resource usage, reducing costs, and providing safe 
+and flexible environments. Hypervisors manage VMs, while 
+containers provide lightweight environments for applications.
+
+*************************
+Virtualization and containers are important technologies that help make cloud computing efficient and scalable.
+Cloud Computing Summary
+
+Cloud Computing allows applications to use computing resources over the internet instead of relying on a single physical computer.
+
+Key Benefits
+Scalability: Easily increase or decrease resources based on demand.
+On-demand self-service: Create resources quickly when needed.
+Pay-as-you-go: Pay only for the resources you use.
+High availability: Applications can remain available even if part of the system fails.
+Global access: Applications can be accessed from anywhere.
+Security: Cloud providers offer security measures to protect infrastructure.
+Cloud Deployment Types
+Public Cloud: Shared cloud infrastructure available to many customers.
+Private Cloud: Cloud infrastructure dedicated to one organization.
+Hybrid Cloud: Combination of public and private clouds.
+Cloud Service Models
+IaaS: Provides virtual servers, storage, and networking. The user manages the OS and applications.
+PaaS: The provider manages the infrastructure and OS; the user focuses on the application.
+SaaS: A complete application is provided over the internet, such as Gmail or Zoom.
+Main Cloud Providers
+AWS
+Microsoft Azure
+Google Cloud Platform (GCP)
+Alibaba Cloud
+IBM Cloud
+Oracle Cloud
+Why Cloud?
+
+Cloud computing evolved from physical servers and virtualization to provide flexible, scalable, cost-effective, and reliable infrastructure for modern applications
+*********88888
+Cloud Types
+Public Cloud: Cloud services shared by many customers over the internet.
+Private Cloud: Cloud dedicated to one organization, providing more control and security.
+Hybrid Cloud: Combination of Public and Private Cloud.
+Cloud Service Models
+IaaS: Rent basic infrastructure such as virtual servers and storage.
+PaaS: A ready-to-use environment for building and running applications without managing servers.
+SaaS: Complete software used online, such as Gmail or Zoom.
+EC2
+EC2: AWS virtual computers that can be created, resized, started, or stopped when needed.
+Cloud Benefits
+Scalability
+On-demand self-service
+Pay only for what you use
+Security
+High availability
+Global access
+*********************8888

@@ -2,54 +2,61 @@
 
 ## What is a Network?
 
-Networks are simply things connected together.
+A network is a group of devices or systems connected together to communicate and share resources.
 
-The Internet is one giant network that consists of many smaller networks. These smaller networks are called **private networks**, while the networks that connect them together are known as **public networks**.
+The Internet is a global network made up of many interconnected networks.
+
+**Private networks** are typically internal networks used by organizations, homes, and other environments, while **public networks** are accessible beyond a private network.
 
 ---
 
 ## IP and MAC Addresses
 
-Devices have two main methods of identification:
+Devices use different types of identifiers to communicate on a network, including:
 
 - **IP Address (Internet Protocol Address)**
 - **MAC Address (Media Access Control Address)**
 
 ### IP Address
 
-An IP address is used to identify a device on a network.
+An IP address is used to identify a device or network interface within a network or address scope.
 
 - IP addresses can change depending on the network.
-- The same IP address cannot be used by two active devices on the same network simultaneously.
+- An IP address must be unique within the same network or address scope to avoid address conflicts.
 
-#### Public vs Private IP Address
+### Public vs Private IP Address
 
-- A **Public IP Address** identifies a device on the Internet.
-- A **Private IP Address** identifies a device within a local network.
+- A **Public IP Address** is routable on the Internet.
+- A **Private IP Address** is used within a private/local network.
 
-Public IP addresses are usually assigned by an Internet Service Provider (ISP).
+Private IPv4 address ranges include:
+
+- `10.0.0.0/8`
+- `172.16.0.0/12`
+- `192.168.0.0/16`
+
+Public IP addresses are commonly assigned by an Internet Service Provider (ISP).
 
 ### IPv4 vs IPv6
 
-| Protocol | Size | Address Capacity |
-|-----------|------|------------------|
+| Protocol | Address Size | Address Capacity |
+|---|---:|---:|
 | IPv4 | 32-bit | Up to 2³² addresses |
 | IPv6 | 128-bit | Up to 2¹²⁸ addresses |
 
 ### MAC Address
 
-A MAC address is a unique 12-character identifier assigned to a network interface.
+A MAC address is a hardware/network interface identifier typically represented as 12 hexadecimal characters (48 bits).
 
-- The first six characters identify the manufacturer.
-- The last six characters uniquely identify the device.
+The first 24 bits are commonly associated with the vendor through the **OUI (Organizationally Unique Identifier)**.
 
-> Note: MAC addresses can be modified through a process known as **MAC Spoofing**.
+> **Note:** MAC addresses can be modified through a process known as **MAC Spoofing**.
 
 ### Ping (ICMP)
 
 Ping is a network utility used to test connectivity between devices.
 
-It works by sending **ICMP (Internet Control Message Protocol)** packets and waiting for a response.
+It commonly works by sending **ICMP (Internet Control Message Protocol)** messages and waiting for a response.
 
 ---
 
@@ -59,28 +66,28 @@ A network topology describes how devices are connected within a network.
 
 ### Star Topology
 
-In a Star Topology, devices connect to a central device such as a switch or hub.
+In a Star Topology, devices connect to a central device such as a switch.
 
 **Advantages:**
 - Easy to add new devices.
 - Easy to manage and troubleshoot.
 
 **Disadvantages:**
-- More expensive due to the central device.
+- Failure of the central device can affect connected devices.
 
 ### Bus Topology
 
-A Bus Topology uses a single backbone cable to connect all devices.
+A Bus Topology uses a single backbone cable to connect multiple devices.
 
 ### Ring Topology
 
-In a Ring Topology, devices connect directly to each other to form a loop.
+In a Ring Topology, devices are connected in a loop.
 
 **Advantages:**
-- Less prone to bottlenecks compared to a Bus Topology.
+- Can provide predictable traffic flow.
 
 **Disadvantages:**
-- A single cable failure can disrupt the entire network.
+- A failure in the ring can disrupt communication, depending on the implementation.
 
 ---
 
@@ -88,10 +95,9 @@ In a Ring Topology, devices connect directly to each other to form a loop.
 
 ### Switch
 
-A Switch connects multiple devices within the same network using Ethernet connections.
+A switch connects multiple devices within the same local network and forwards Ethernet frames based on MAC addresses.
 
-Examples include:
-
+**Examples:**
 - Computers
 - Printers
 - Servers
@@ -99,44 +105,43 @@ Examples include:
 
 ### Router
 
-A Router connects different networks together and forwards data between them.
+A router connects different networks and forwards packets between them using IP addressing and routing information.
 
 ---
 
 ## Subnetting
 
-Subnetting is the process of splitting a large network into smaller networks (sub-networks).
+Subnetting is the process of dividing a larger network into smaller networks (subnets).
 
-It helps in organizing and managing networks more efficiently.
+It helps organize networks, manage IP addressing, and control network traffic.
 
 ### Subnet Mask
 
-A subnet mask is used to define how many hosts can exist in a network.
-
-It is represented as a 32-bit number (similar to an IP address), usually in the range of 0–255.
+A subnet mask determines which portion of an IPv4 address represents the network and which portion represents the host.
 
 ### Network Address
 
-This address identifies the start of a network and represents the network itself.
+The network address identifies the network itself and is not normally assigned to an individual host.
 
 ### Host Address
 
-A host address is used to identify a specific device inside a network.
+A host address identifies a specific device or interface within a network.
 
 ### Default Gateway
 
-The default gateway is a device (usually a router) that allows communication between different networks.
+The default gateway is typically a router or Layer 3 device that allows a host to communicate with other networks.
 
 ---
 
 ## ARP (Address Resolution Protocol)
 
-ARP is used to map IP addresses to MAC addresses within a network.
+ARP is used in IPv4 networks to map an IP address to a MAC address on the local network.
 
 ### ARP Request
 
 A device broadcasts a request asking:
-"Who has this IP address?"
+
+> "Who has this IP address?"
 
 ### ARP Reply
 
@@ -146,165 +151,176 @@ The device that owns the IP address responds with its MAC address.
 
 ## DHCP (Dynamic Host Configuration Protocol)
 
-DHCP automatically assigns IP addresses to devices in a network.
+DHCP automatically provides network configuration information to devices.
+
+A typical DHCP process is known as **DORA**:
+
+**Discover → Offer → Request → ACK**
 
 ### DHCP Discover
 
-A device sends a request to find a DHCP server and obtain an IP address.
+A device broadcasts a message to discover available DHCP servers.
+
+### DHCP Offer
+
+A DHCP server offers an IP address and other network configuration information.
 
 ### DHCP Request
 
-The device requests the offered IP address from the server.
+The client requests the offered configuration.
 
 ### DHCP ACK
 
-The DHCP server confirms and assigns the IP address to the device.
+The DHCP server confirms the configuration and assigns the requested network information.
 
 ---
 
 ## OSI Model (Open Systems Interconnection)
 
-The OSI Model is a framework that describes how data moves across a network.
-
-It is divided into 7 layers:
+The OSI Model is a conceptual framework that describes how network communication can be divided into seven layers.
 
 ### Layer 7 - Application
-Where users interact with network services (e.g., DNS, web browsing).
+
+Provides network services used by applications.
+
+**Examples:** HTTP, DNS, FTP, SSH.
 
 ### Layer 6 - Presentation
-Translates and formats data for the application layer.
+
+Handles data representation, translation, encoding, and formatting.
 
 ### Layer 5 - Session
-Manages communication sessions between devices.
+
+Manages communication sessions between applications or systems.
 
 ### Layer 4 - Transport
 
-Responsible for data delivery.
+Provides end-to-end transport and communication.
 
-#### TCP (Transmission Control Protocol)
-- Reliable
-- Connection-based
-- Used for web browsing, email, file transfers
-
-#### UDP (User Datagram Protocol)
-- Faster but less reliable
-- No connection required
-- Used for streaming and real-time data
+**Examples:** TCP and UDP.
 
 ### Layer 3 - Network
-Handles routing using IP addresses.
+
+Handles logical addressing and routing using IP addresses.
 
 ### Layer 2 - Data Link
-Handles MAC addressing and physical device communication.
+
+Handles local network communication, frames, and MAC addressing.
 
 ### Layer 1 - Physical
-Deals with hardware, cables, and electrical signals.
+
+Deals with physical transmission through hardware, cables, radio signals, and electrical/optical signals.
 
 ---
 
 ## Packets and Frames
 
 ### Packet
-A packet is data sent at Layer 3 (Network Layer). It contains IP information.
+
+A packet is a unit of data at the Layer 3 Network Layer and contains information such as source and destination IP addresses.
 
 ### Frame
-A frame is data at Layer 2 (Data Link Layer) and includes MAC address information.
+
+A frame is a unit of data at the Layer 2 Data Link Layer and contains information such as source and destination MAC addresses.
 
 ### Time To Live (TTL)
-Limits how long a packet can stay in the network before being discarded.
+
+TTL limits the number of Layer 3 hops a packet can make before it is discarded.
 
 ### Checksum
-Used to verify data integrity during transmission.
+
+A checksum is used to help detect errors or corruption in transmitted data.
 
 ---
 
 ## TCP/IP Model
 
-The TCP/IP model is a simplified version of the OSI model.
+The TCP/IP model is a practical networking model commonly represented using four layers:
 
-It has 4 layers:
 - Application
 - Transport
 - Internet
 - Network Interface
 
-### TCP (Transmission Control Protocol)
+---
 
-TCP is a connection-based protocol.
+## TCP (Transmission Control Protocol)
 
-#### Advantages:
+TCP is a connection-oriented protocol that provides reliable and ordered data delivery.
+
+### Advantages
+
 - Reliable data transfer
-- Ensures correct order of data
-- Error checking included
-
-#### Disadvantages:
-- Slower than UDP
-- Requires stable connection
+- Ensures correct ordering of data
+- Error detection and recovery mechanisms
 
 ### Three-Way Handshake
 
-Used to establish a connection:
+The TCP three-way handshake establishes a connection:
 
-- SYN: Initiates connection
-- SYN-ACK: Response from server
-- ACK: Final confirmation
+1. **SYN** — The client initiates the connection.
+2. **SYN-ACK** — The server acknowledges the request and sends its own SYN.
+3. **ACK** — The client acknowledges the server's response.
 
 ### Connection Termination
 
-- FIN: Closes connection
-- RST: Abruptly terminates connection
+- **FIN** — Used for graceful connection termination.
+- **RST** — Used to immediately reset a connection.
 
 ---
 
 ## UDP (User Datagram Protocol)
 
-UDP is a connectionless protocol.
+UDP is a connectionless transport protocol.
 
-- Faster than TCP
-- No guarantee of delivery
-- Used for streaming and real-time applications
+- Low overhead
+- No built-in guarantee of delivery
+- No built-in ordering
+- Useful for applications where low latency is important
 
 ---
 
 ## Common Network Ports and Protocols
 
-- FTP: Port 21 (File Transfer)
-- SSH: Port 22 (Secure remote login)
-- HTTP: Port 80 (Web browsing)
-- HTTPS: Port 443 (Secure web browsing)
-- SMB: Port 445 (File sharing)
-- RDP: Port 3389 (Remote desktop access)
+| Protocol | Port | Common Use |
+|---|---:|---|
+| FTP | 21 | File Transfer |
+| SSH | 22 | Secure Remote Login |
+| HTTP | 80 | Web Traffic |
+| HTTPS | 443 | Secure Web Traffic |
+| SMB | 445 | File/Resource Sharing |
+| RDP | 3389 | Remote Desktop |
 
 ---
 
 ## Firewall & Network Security
 
-A firewall controls incoming and outgoing network traffic.
-
-It decides whether traffic is allowed or blocked based on rules.
+A firewall controls incoming and outgoing network traffic based on predefined rules.
 
 ### Stateful Firewall
-Tracks full connections and blocks based on behavior.
+
+A stateful firewall tracks the state of active connections and uses connection state when making filtering decisions.
 
 ### Stateless Firewall
-Inspects individual packets without tracking the full connection.
+
+A stateless firewall evaluates packets individually based on predefined rules without maintaining connection state.
 
 ---
 
 ## VPN (Virtual Private Network)
 
-A VPN creates a secure encrypted connection (tunnel) between devices over the internet.
+A VPN establishes an encrypted tunnel between endpoints, depending on the VPN protocol and configuration.
 
-### Benefits:
+### Benefits
+
 - Increased privacy
 - Secure communication
-- Protects data over public networks
+- Protection of data when using untrusted networks
 
 ---
 
 ## VLAN (Virtual Local Area Network)
 
-A VLAN divides a physical network into multiple logical networks.
+A VLAN divides a physical switched network into multiple logical networks.
 
-It helps improve security and performance by separating traffic.
-
+VLANs provide logical segmentation and can help separate traffic between different groups of devices.

@@ -2,16 +2,32 @@
 
 ## Offensive Security
 
-Offensive Security is about thinking like an attacker to identify vulnerabilities before malicious hackers can exploit them.
+Offensive Security focuses on thinking like an attacker to identify and exploit vulnerabilities before malicious attackers can take advantage of them.
 
-## Dirb
+**Goal:**  
+Identify vulnerabilities and understand how they could be exploited.
 
-Dirb is a web content scanner used to discover hidden directories and web pages by testing common URL names.
+---
+
+## DIRB
+
+DIRB is a web content scanner used to discover potentially hidden directories and files by testing common URL names.
+
+**Use case:**  
+DIRB can be used during web reconnaissance to discover potentially accessible directories and files.
 
 ### Note
 
-Lines starting with "+" in the output indicate discovered pages or directories.
+Lines starting with `+` in the output indicate discovered pages or directories.
+
+---
 
 ## Defensive Security
 
-Defensive Security focuses on protecting and securing systems, networks, and devices against cyber threats.
+Defensive Security focuses on protecting systems, networks, and devices against cyber threats.
+
+**Examples:**
+- Monitoring
+- Threat detection
+- Incident response
+- Security controls

@@ -88,10 +88,71 @@ her learning.
     Windows Defender : The firewall designed to help protect your system from unauthorized network traffic
 ------------------------------------------------------------------------------------------
 
+Linux CLI Basics:
+*  pwd : "print working directory"  ----> show me the folder I'm currently in
+*  ls:   let's see what files and folders are here  _ f we need more details, we can try: ls -l
+*   ls -al : to get the hidden files in the directory -Hidden files aren't really secret; they start with a dot ., and Linux hides such files by default.
+*   To walk through the filesystem, we can use: cd <directory>. For example: cd Documents, and this will change our directory to Documents, as shown below
+*   To go "back" one level, we will use the command cd .., as shown below:
+*   find ~ -name : is used to locate files within the file system.
+*   cat :  This is used to read the content of the file.
+*   whoami:This prints your current username.
+*   uname -a: To see details about the operating system, kernel version, and architecture, use:
+*  uname: If you only want the operating system name, you can try:
+*  df -h: it shows sizes like 2G
+*  To practice navigating and reading files, head into /etc by running cd /etc and then list what’s inside: ls
+-------------------------------------------  ---------------------------------------------------
+  Windows CLI Basics|:
+  ----------------
+* cd : Where Am I
+* dir : What's Around Me
+* show everything, including hidden items, run: dir /a
+* cd folder_name:  to move to the specified folder
+* : dir /s name :Finding the File on the Disk
+*  type name :Read the File
+*  whoami:Who Am I Logged In As?
+*  hostname: What Is the Name of This Computer?
+*  systeminfo:What Version of Windows Is This
+*  ipconfig:How Is This Machine Connected to the Network
 
+  ---------------------------------------------------------------------------------------
+  Operating System Security:
+  --------------------------
+  When we talk about security, we should think of protecting three things:
+  Confidentiality: You want to ensure that secret and private files and information are only available to intended persons.
+  integrity:: It is crucial that no one can tamper with the files stored on your system or while being transferred on the network. 
+  Availability: You want your laptop or smartphone to be available to use anytime you decide to use it.
 
+  we will discuss common attacks against these security pillars:
+  ---------------------------------------------------------
+ 1- Authentication and Weak Passwords
+ ------------------------------------
+ Authentication can be achieved via three main ways:
 
+    Something you know, such as a password or a PIN code.
+    Something you are, such as a fingerprint.
+    Something you have, such as a phone number via which you can receive an SMS message.
 
-
+    it is vital that you choose complex passwords and use different passwords with different accounts.
+    
+ 2- Weak File Permissions:
+ -------------------------
+Weak file permissions make it easy for the adversary to attack confidentiality and integrity. They can attack confidentiality as weak permissions allow them to access files they should not be able to access. Moreover, they can attack integrity as they might modify files that they should not be able to edit.
+ 
+ 3- Malicious Programs:
+ ----------------------
+such as Trojan horses, give the attacker access to your system. Consequently, the attacker would be able to read your files or even modify them.
+Some types of malicious programs attack availability  One such example is ransomware
+Ransomware is a malicious program that encrypts the user's files. Encryption makes the file(s) unreadable without knowing the encryption password
+ i.e., regain access to their original files: they would give them the encryption password if the user is willing to pay the “ransom.”
   
-  
+* The National Cyber Security Centre (NCSC)
+  ------------------------------------------------------------------------------------
+whoami	?	Shows the current username.
+ssh USERNAME@IP       	Connects/logs in to a remote computer.
+ls	      	Lists files and folders in the current directory.
+cat FILENAME	    : Displays the contents of a file.
+history	 :	Shows commands previously typed by the user.
+su - USERNAME	 :	Switches to another user accoun
+
+---------------------------------------------------

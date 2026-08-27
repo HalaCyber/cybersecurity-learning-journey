@@ -1,158 +1,472 @@
-Module 3 : Operating Systems Basics
 
-*Operating Systems: Introduction:
- operating system:the invisible layer that ties it all together.
-  is the core software that coordinates everything happening on a computer
-  *OS Responsibility:
-  -> Process Management
-  Opening multiple apps, like your browser, music player, and social media, without your computer freezing
-  -> Memory Management
-  Opening multiple app at once, the OS allocates RAM to each one and keeps them isolated so they don’t interfere or crash each other
-  -> file system management 
-  Creating a new folder, saving a photo, or setting a file to "read only"
-  -> User Management
-  Logging in with your password and keeping your files inaccessible to other user accounts
-  -> Device Management
-  Plugging in a new mouse, printer, or external hard drive and having it work immediately
-  
-  At a basic level, your operating system handles:
-  *Authentication
-  *Permissions
-  *Isolation
-  *System Protection
+# Module 3 - Operating Systems Basics
 
-  *Kernel Space: Which OS space has unrestricted access to your computer's hardware?
-  *User space :The area where regular applications run with limited permissions for safety and system stability.
-  ------------------------------------------------------------------------------------
-  OS  Interfaces:
-  ----> graphical user interface (GUI)
-  It provides a graphical representation of all the information you want to access on your computer
-  ----> command-line interface (CU)
-  . It’s direct and extremely accurate,
-  where you enter specific text-based commands to retrieve or manipulate information
+## 1. Operating Systems: Introduction
 
------
-Operating System Type:
--->Desktop: 
-1-Windows :Windows 10 (end-of-life), Windows 11
-2-macOS: Sonoma (14), Sequoia (15), Tahoe (26)
-3-Linux:open-source operating systems called distributions
-Ubuntu, Debian, Fedora
--->Server:
-1-Windows:  Server 2016, 2019, 2022, 2025
+An **Operating System (OS)** is the core software that coordinates everything happening on a computer. It acts as the invisible layer that ties everything together.
 
-2-Linux:  Ubuntu Server, Debian, CentOS, Red Hat
+### OS Responsibilities
 
-3-Unix: IBM AIX, Oracle Solaris
+#### Process Management
 
--->Mobile:
-1-Android:
-2-iOS: Apple's mobile OS running on iPhones, iPads, and other devices
--->Embedded and IoT Devices:
-1-Embedded Linux:OpenWrt, Ubuntu Core, Yocto Project
-2-Real-Time OS:FreeRTOS, VxWorks, QNX
--->Virtual/Cloud:
-1-Cloud/VM:Ubuntu LTS, Amazon Linux, Rocky Linux
-2-Container-optimized:Alpine Linux, Bottlerocket AWS, Flatcar Linux
+The OS manages running processes and allows multiple applications to run at the same time without interfering with each other.
 
+Example:
 
+- Browser
+- Music player
+- Social media application
 
-----------------------------------------------------------------------------------
-Windows Basics:
----------------
-Windows commonly uses the account types below.
+#### Memory Management
 
-   * Guest: A restricted account intended for temporary access, with minimal permissions and no ability to change system settings
-    
-    *Standard: A user account for everyday tasks, such as running applications and changing personal settings, without access to system-wide changes
-    
-    *Administrator: A privileged account with full control over the system, including software installation, configuration changes, and user management
+When multiple applications are running, the OS allocates RAM to each application and keeps their memory isolated so they do not interfere with or crash each other.
 
-*When you first log in, you're presented with two main areas.
+#### File System Management
 
-    Desktop: The main workspace where files, folders, and shortcuts live
-    Taskbar: A control strip that provides access to applications, system tools, settings, and notifications
+The OS manages files and folders.
 
-her learning.
+Examples:
 
-   
-    Start Menu: The primary way to access applications, settings, and power options, signified by the Windows logo
-    Search: A quick access method of locating applications, settings, and files by entering search terms
-    File Explorer: The built-in Windows tool to browse, manage, and organize files and folders
-    Windows Update: A built-in update tool that helps keep your , native apps, and security features up to date
-    Microsoft Store: The native Windows application for installing trusted applications
-    Windows Settings: A centralized location for configuring system, device, personalization, and security settings
-    Control Panel: The legacy management interface that provides access to system configuration options
-    Task Manager: A Windows tool for monitoring what is happening on your system in real time
-    Windows Security: The central dashboard for managing Windows built-in security tools
-    Windows Defender : The firewall designed to help protect your system from unauthorized network traffic
-------------------------------------------------------------------------------------------
+- Creating a new folder
+- Saving a photo
+- Setting a file to "read only"
 
-Linux CLI Basics:
-*  pwd : "print working directory"  ----> show me the folder I'm currently in
-*  ls:   let's see what files and folders are here  _ f we need more details, we can try: ls -l
-*   ls -al : to get the hidden files in the directory -Hidden files aren't really secret; they start with a dot ., and Linux hides such files by default.
-*   To walk through the filesystem, we can use: cd <directory>. For example: cd Documents, and this will change our directory to Documents, as shown below
-*   To go "back" one level, we will use the command cd .., as shown below:
-*   find ~ -name : is used to locate files within the file system.
-*   cat :  This is used to read the content of the file.
-*   whoami:This prints your current username.
-*   uname -a: To see details about the operating system, kernel version, and architecture, use:
-*  uname: If you only want the operating system name, you can try:
-*  df -h: it shows sizes like 2G
-*  To practice navigating and reading files, head into /etc by running cd /etc and then list what’s inside: ls
--------------------------------------------  ---------------------------------------------------
-  Windows CLI Basics|:
-  ----------------
-* cd : Where Am I
-* dir : What's Around Me
-* show everything, including hidden items, run: dir /a
-* cd folder_name:  to move to the specified folder
-* : dir /s name :Finding the File on the Disk
-*  type name :Read the File
-*  whoami:Who Am I Logged In As?
-*  hostname: What Is the Name of This Computer?
-*  systeminfo:What Version of Windows Is This
-*  ipconfig:How Is This Machine Connected to the Network
+#### User Management
 
-  ---------------------------------------------------------------------------------------
-  Operating System Security:
-  --------------------------
-  When we talk about security, we should think of protecting three things:
-  Confidentiality: You want to ensure that secret and private files and information are only available to intended persons.
-  integrity:: It is crucial that no one can tamper with the files stored on your system or while being transferred on the network. 
-  Availability: You want your laptop or smartphone to be available to use anytime you decide to use it.
+The OS manages user accounts and access.
 
-  we will discuss common attacks against these security pillars:
-  ---------------------------------------------------------
- 1- Authentication and Weak Passwords
- ------------------------------------
- Authentication can be achieved via three main ways:
+Example:
 
-    Something you know, such as a password or a PIN code.
-    Something you are, such as a fingerprint.
-    Something you have, such as a phone number via which you can receive an SMS message.
+- Logging in with a password.
+- Keeping files inaccessible to other user accounts.
 
-    it is vital that you choose complex passwords and use different passwords with different accounts.
-    
- 2- Weak File Permissions:
- -------------------------
-Weak file permissions make it easy for the adversary to attack confidentiality and integrity. They can attack confidentiality as weak permissions allow them to access files they should not be able to access. Moreover, they can attack integrity as they might modify files that they should not be able to edit.
- 
- 3- Malicious Programs:
- ----------------------
-such as Trojan horses, give the attacker access to your system. Consequently, the attacker would be able to read your files or even modify them.
-Some types of malicious programs attack availability  One such example is ransomware
-Ransomware is a malicious program that encrypts the user's files. Encryption makes the file(s) unreadable without knowing the encryption password
- i.e., regain access to their original files: they would give them the encryption password if the user is willing to pay the “ransom.”
-  
-* The National Cyber Security Centre (NCSC)
-  ------------------------------------------------------------------------------------
-whoami	?	Shows the current username.
-ssh USERNAME@IP       	Connects/logs in to a remote computer.
-ls	      	Lists files and folders in the current directory.
-cat FILENAME	    : Displays the contents of a file.
-history	 :	Shows commands previously typed by the user.
-su - USERNAME	 :	Switches to another user accoun
+#### Device Management
 
----------------------------------------------------
+The OS manages hardware devices and allows them to communicate with the system.
+
+Examples:
+
+- Mouse
+- Printer
+- External hard drive
+
+### Basic OS Security Responsibilities
+
+At a basic level, an operating system handles:
+
+- Authentication
+- Permissions
+- Isolation
+- System Protection
+
+---
+
+## 2. Kernel Space and User Space
+
+### Kernel Space
+
+**Kernel Space** is the area of the operating system that has unrestricted access to the computer's hardware and system resources.
+
+### User Space
+
+**User Space** is the area where regular applications run with limited permissions for safety and system stability.
+
+---
+
+## 3. Operating System Interfaces
+
+### Graphical User Interface (GUI)
+
+A **Graphical User Interface (GUI)** provides a graphical representation of the information and functions that users can access on a computer.
+
+### Command-Line Interface (CLI)
+
+A **Command-Line Interface (CLI)** allows users to enter specific text-based commands to retrieve or manipulate information.
+
+CLI is direct and precise.
+
+---
+
+## 4. Operating System Types
+
+### Desktop Operating Systems
+
+#### Windows
+
+Examples:
+
+- Windows 10 (End-of-Life)
+- Windows 11
+
+#### macOS
+
+Examples:
+
+- Sonoma (14)
+- Sequoia (15)
+- Tahoe (26)
+
+#### Linux
+
+Linux distributions are open-source operating systems.
+
+Examples:
+
+- Ubuntu
+- Debian
+- Fedora
+
+### Server Operating Systems
+
+#### Windows Server
+
+Examples:
+
+- Windows Server 2016
+- Windows Server 2019
+- Windows Server 2022
+- Windows Server 2025
+
+#### Linux
+
+Examples:
+
+- Ubuntu Server
+- Debian
+- CentOS
+- Red Hat
+
+#### Unix
+
+Examples:
+
+- IBM AIX
+- Oracle Solaris
+
+### Mobile Operating Systems
+
+#### Android
+
+Android is a mobile operating system used on smartphones, tablets, and other mobile devices.
+
+#### iOS
+
+iOS is Apple's mobile operating system used on iPhones and other Apple devices.
+
+### Embedded and IoT Operating Systems
+
+#### Embedded Linux
+
+Examples:
+
+- OpenWrt
+- Ubuntu Core
+- Yocto Project
+
+#### Real-Time Operating Systems (RTOS)
+
+Examples:
+
+- FreeRTOS
+- VxWorks
+- QNX
+
+### Virtual and Cloud Operating Systems
+
+#### Cloud / VM
+
+Examples:
+
+- Ubuntu LTS
+- Amazon Linux
+- Rocky Linux
+
+#### Container-Optimized
+
+Examples:
+
+- Alpine Linux
+- Bottlerocket AWS
+- Flatcar Linux
+
+---
+
+## 5. Windows Basics
+
+Windows commonly uses the following account types.
+
+### Guest
+
+A **Guest** account is a restricted account intended for temporary access, with minimal permissions and no ability to make system-wide changes.
+
+### Standard
+
+A **Standard** user account is intended for everyday tasks, such as running applications and changing personal settings, without access to system-wide changes.
+
+### Administrator
+
+An **Administrator** account is a privileged account with extensive control over the system, including software installation, configuration changes, and user management.
+
+### Windows Desktop and Taskbar
+
+When you first log in, you are presented with two main areas:
+
+**Desktop** → The main workspace where files, folders, and shortcuts are displayed.
+
+**Taskbar** → A control strip that provides access to applications, system tools, settings, and notifications.
+
+### Common Windows Tools
+
+**Start Menu** → The primary way to access applications, settings, and power options, represented by the Windows logo.
+
+**Search** → A quick way to locate applications, settings, and files by entering search terms.
+
+**File Explorer** → The built-in Windows tool used to browse, manage, and organize files and folders.
+
+**Windows Update** → A built-in update tool that helps keep Windows, native apps, and security features up to date.
+
+**Microsoft Store** → The native Windows application for installing applications.
+
+**Windows Settings** → A centralized location for configuring system, device, personalization, and security settings.
+
+**Control Panel** → The legacy management interface that provides access to system configuration options.
+
+**Task Manager** → A Windows tool for monitoring what is happening on the system in real time.
+
+**Windows Security** → The central dashboard for managing Windows built-in security tools.
+
+**Windows Defender Firewall** → A firewall designed to help protect the system from unauthorized network traffic.
+
+---
+
+## 6. Linux CLI Basics
+
+### `pwd`
+
+`pwd` stands for **Print Working Directory**.
+
+It shows the folder you are currently in.
+
+### `ls`
+
+`ls` lists the files and folders in the current directory.
+
+For more details, use:
+
+```bash
+ls -l
+````
+
+### `ls -al`
+
+`ls -al` displays files and folders, including hidden files.
+
+Hidden files are not necessarily secret. They usually start with a dot (`.`), and Linux hides them by default.
+
+### `cd`
+
+`cd` is used to change the current directory.
+
+Example:
+
+```bash
+cd Documents
+```
+
+### `cd ..`
+
+`cd ..` moves back one level in the directory structure.
+
+### `find`
+
+`find` is used to locate files within the file system.
+
+Example:
+
+```bash
+find ~ -name <filename>
+```
+
+### `cat`
+
+`cat` is used to display the contents of a file.
+
+Example:
+
+```bash
+cat filename
+```
+
+### `whoami`
+
+`whoami` prints the current username.
+
+### `uname -a`
+
+`uname -a` displays information about the operating system, kernel version, and system architecture.
+
+### `uname`
+
+`uname` can be used to display the operating system name.
+
+### `df -h`
+
+`df -h` displays disk space usage in a human-readable format, such as `2G`.
+
+### `/etc`
+
+To practice navigating and reading files, you can enter the `/etc` directory:
+
+```bash
+cd /etc
+ls
+```
+
+---
+
+## 7. Windows CLI Basics
+
+### `cd`
+
+`cd` is used to change the current directory.
+
+### `dir`
+
+`dir` lists files and folders in the current directory.
+
+### `dir /a`
+
+`dir /a` displays files and folders, including hidden items.
+
+### `cd folder_name`
+
+Moves to the specified folder.
+
+Example:
+
+```cmd
+cd Documents
+```
+
+### `dir /s name`
+
+Searches for a file on the disk.
+
+### `type name`
+
+Displays the contents of a file.
+
+### `whoami`
+
+Shows the username of the currently logged-in user.
+
+### `hostname`
+
+Displays the name of the computer.
+
+### `systeminfo`
+
+Displays detailed information about the Windows system.
+
+### `ipconfig`
+
+Displays network configuration information and helps show how the machine is connected to the network.
+
+---
+
+## 8. Operating System Security
+
+When we talk about security, we should think about protecting three main things:
+
+### Confidentiality
+
+**Confidentiality** means ensuring that private and sensitive files and information are only available to authorized people.
+
+### Integrity
+
+**Integrity** means ensuring that files and information cannot be improperly modified or tampered with.
+
+### Availability
+
+**Availability** means ensuring that your laptop, smartphone, or other systems remain available when you need to use them.
+
+These three principles are commonly known as the **CIA Triad**.
+
+---
+
+## 9. Common Attacks Against Security Pillars
+
+### 1. Authentication and Weak Passwords
+
+Authentication can be achieved through three main factors:
+
+**Something you know** → Such as a password or PIN code.
+
+**Something you are** → Such as a fingerprint.
+
+**Something you have** → Such as a phone or device that can receive an SMS message.
+
+It is important to choose strong passwords and use different passwords for different accounts.
+
+### 2. Weak File Permissions
+
+Weak file permissions can make it easier for an adversary to attack **confidentiality** and **integrity**.
+
+They can attack confidentiality because weak permissions may allow unauthorized users to access files they should not be able to access.
+
+They can attack integrity because they may be able to modify files they should not be allowed to edit.
+
+### 3. Malicious Programs
+
+Malicious programs, such as **Trojan horses**, can give attackers access to a system.
+
+Consequently, an attacker may be able to read or modify files.
+
+Some types of malicious programs attack **availability**.
+
+One example is **ransomware**.
+
+**Ransomware** is a malicious program that encrypts the user's files. Encryption makes the files unreadable without the required decryption key or password.
+
+Attackers may demand a ransom in exchange for restoring access to the original files.
+
+---
+
+## 10. Useful Linux Commands - NCSC
+
+The following commands are useful when working with Linux systems:
+
+| Command           | Description                                       |
+| ----------------- | ------------------------------------------------- |
+| `whoami`          | Shows the current username.                       |
+| `ssh USERNAME@IP` | Connects or logs in to a remote computer.         |
+| `ls`              | Lists files and folders in the current directory. |
+| `cat FILENAME`    | Displays the contents of a file.                  |
+| `history`         | Shows commands previously typed by the user.      |
+| `su - USERNAME`   | Switches to another user account.                 |
+
+---
+
+## Cybersecurity Perspective
+
+Understanding operating systems is essential for cybersecurity because security professionals need to understand how systems manage users, processes, memory, files, devices, and permissions.
+
+Important areas include:
+
+* Authentication
+* Permissions
+* User management
+* File systems
+* Processes
+* Memory
+* System protection
+* Linux CLI
+* Windows CLI
+* Confidentiality
+* Integrity
+* Availability
+* Malicious programs
+* Ransomware
+
+```
+

@@ -319,6 +319,7 @@ A VPN establishes an encrypted tunnel between endpoints, depending on the VPN pr
 
 ---
 
+
 ## VLAN (Virtual Local Area Network)
 
 A VLAN divides a physical switched network into multiple logical networks.

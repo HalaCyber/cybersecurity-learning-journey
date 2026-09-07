@@ -1,1 +1,187 @@
 Module 2 :  Linux Fundamentals
+
+Linux is widely used in servers, websites, embedded devices, cars, infrastructure, and many other systems
+* whoami : tells you who you are on the system
+* echo : output some specific text that is provided
+* ls : list what's in the current folder
+* cd : change directory — move into a folder
+* cat : show the contents of a file
+* pwd : print working directory — "where am I?"
+* find : search for files by their name. For example, find -name passwords.txt
+* grep : searches inside for text. For example, grep "password123" passwords.txt
+* & : Runs the command, but does not wait for it to finish before you can do anything else. The command runs in the backgorund, and is helpful for
+commands that might take a while to complete, or ones that you want to keep running.
+* && : Runs both commands, but waits for the first command to finish first, before the next. Like a set of dominoes.
+* > : Used to redirect output. We can take the output of a command and send it to a file. This operator will overwrite anything that exists in the file.
+* >> : This redirector does the same thing, but instead of overwriting, it will just add the output to the bottom of the file.
+
+**SSH (Secure Shell)** is a protocol used to securely connect to a remote computer over a network.
+
+To connect using SSH, you usually need:
+
+* **IP address** → The address of the remote machine
+* **Username** → An account on the remote machine
+* **Password** → The account's password
+
+Example:
+
+```bash
+ssh username@10.10.10.10
+```
+
+After connecting, the commands you run are executed on the **remote machine**, not your own computer.
+
+**Remember:** SSH = Secure remote access to a computer through the command line.
+
+
+
+**Arguments / Flags** change or control how a Linux command works.
+
+Example:
+
+```bash
+ls
+```
+
+Lists files and directories.
+
+```bash
+ls -a
+```
+
+Lists **all** files, including hidden files.
+
+* `-a` → an option/flag
+* Files starting with `.` → hidden files
+
+To see available options:
+
+```bash
+ls --help
+```
+
+To read the full manual:
+
+```bash
+man ls
+```
+
+**Remember:**
+
+* `--help` → quick help
+* `man` → detailed documentation
+* `-a`, `-c`, etc. → options/flags that modify a command
+Linux provides commands to create, copy, move, rename, and delete files and folders.
+
+| Command | Purpose                            |
+| ------- | ---------------------------------- |
+| `touch` | Create an empty file               |
+| `mkdir` | Create a directory                 |
+| `cp`    | Copy a file or directory           |
+| `mv`    | Move or rename a file or directory |
+| `rm`    | Remove a file or directory         |
+
+### Examples
+
+```bash
+touch file.txt
+mkdir folder
+cp file.txt copy.txt
+mv file.txt newname.txt
+rm file.txt
+rm -R folder
+```
+
+**Remember:**
+
+`touch` → Create
+`mkdir` → Create folder
+`cp` → Copy
+`mv` → Move / Rename
+`rm` → Delete
+### Important Linux Directories
+
+| Directory | Purpose                         |
+| --------- | ------------------------------- |
+| `/`       | Root of the filesystem          |
+| `/etc`    | Configuration files             |
+| `/var`    | Variable data, especially logs  |
+| `/root`   | Home directory of the root user |
+| `/tmp`    | Temporary files                 |
+
+### Easy Way to Remember
+
+```text
+/      → Top of the filesystem
+/etc   → Configuration
+/var   → Logs / changing data
+/root  → Root user's home
+/tmp   → Temporary files
+```
+
+**Important:** `/` and `/root` are not the same.
+
+* `/` = filesystem root
+* `/root` = home directory of the root user
+# Linux File Permissions & Users
+
+## File Permissions
+
+Linux uses permissions to control what users can do with files and folders.
+
+The three main permissions are:
+
+| Permission | Meaning                  |
+| ---------- | ------------------------ |
+| `r`        | Read the file            |
+| `w`        | Write or modify the file |
+| `x`        | Execute or run the file  |
+
+Use:
+
+```bash
+ls -l
+```
+
+to see detailed information about files, including their permissions.
+
+## Users & Groups
+
+Every file has an **owner** and can also belong to a **group**.
+
+* **Owner** → The user who owns the file.
+* **Group** → A group of users with their own permissions.
+* **Others** → All other users.
+
+Different users and groups can have different permissions for the same file.
+
+## Switching Users
+
+The `su` command allows you to switch to another user.
+
+```bash
+su -l user2
+```
+
+* `su` → Switch user
+* `-l` → Start a login shell
+* `user2` → The user you want to switch to
+
+After switching users, you may have access to files that your previous user could not access.
+
+To display a file's contents:
+
+```bash
+cat important
+```
+
+## Key Takeaways
+
+* `r` = Read
+* `w` = Write
+* `x` = Execute
+* Files have an **owner** and can belong to a **group**.
+* Different users can have different permissions.
+* `ls -l` shows file permissions.
+* `su -l username` switches to another user.
+* `cat filename` displays the contents of a file.

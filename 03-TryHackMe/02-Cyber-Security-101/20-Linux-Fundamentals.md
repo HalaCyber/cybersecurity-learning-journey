@@ -699,3 +699,4 @@ The most important concepts are:
 * Reviewing logs for troubleshooting and security investigations.
 
 > **Practice is the key to becoming comfortable with Linux.**
+

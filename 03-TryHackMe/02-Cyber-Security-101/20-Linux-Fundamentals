@@ -185,3 +185,263 @@ cat important
 * `ls -l` shows file permissions.
 * `su -l username` switches to another user.
 * `cat filename` displays the contents of a file.
+# Linux Text Editors
+
+## Nano
+
+**Nano** is a simple terminal text editor used to create and edit files.
+
+To create or edit a file:
+
+```bash
+nano filename
+```
+
+Nano allows you to:
+
+* Search for text
+* Copy and paste
+* Jump to a specific line
+* See your current line number
+* Edit multiple lines easily
+
+Nano uses **Ctrl + key** shortcuts. In Linux, `^` represents the **Ctrl** key.
+
+For example, to exit Nano:
+
+```text
+Ctrl + X
+```
+
+## VIM
+
+**VIM** is a more advanced terminal text editor.
+
+Its advantages include:
+
+* Highly customisable
+* Supports syntax highlighting
+* Available on many terminals
+* Many tutorials and cheatsheets are available
+
+VIM is more difficult to learn than Nano, but it is very powerful and useful for developers and Linux users.
+
+## Key Takeaways
+
+* `nano filename` → Create or edit a file.
+* Nano is beginner-friendly and easy to use.
+* VIM is more advanced and customisable.
+* Both are useful for editing files directly from the terminal.
+# Linux File Transfer
+
+## Wget
+
+`wget` is used to download files from the web using a URL.
+
+```bash
+wget https://example.com/file.txt
+```
+
+**Wget = Download files**
+
+## SCP
+
+`scp` means **Secure Copy**. It securely transfers files between computers using SSH.
+
+General syntax:
+
+```bash
+scp SOURCE DESTINATION
+```
+
+### Local → Remote
+
+```bash
+scp important.txt ubuntu@192.168.1.30:/home/ubuntu/
+```
+
+### Remote → Local
+
+```bash
+scp ubuntu@192.168.1.30:/home/ubuntu/documents.txt notes.txt
+```
+
+**SCP = Secure file transfer between computers**
+
+## Python HTTP Server
+
+Python can create a simple web server to share files:
+
+```bash
+python3 -m http.server
+```
+
+By default, it uses **port 8000**.
+
+Another computer can download a file using:
+
+```bash
+wget http://10.114.155.31:8000/file.txt
+```
+
+Keep the server terminal running and use another terminal for commands like `wget`.
+
+## Key Takeaways
+
+* `wget` → Download files from a web server.
+* `scp` → Securely transfer files between computers.
+* `python3 -m http.server` → Share files through a simple web server.
+* `scp SOURCE DESTINATION` → Always think **from where → to where**.
+# Linux Processes
+
+* **Process** → A running program.
+* **PID** → Unique ID of a process.
+
+```bash
+ps
+ps aux
+top
+```
+
+* `ps` → View processes.
+* `ps aux` → View all processes.
+* `top` → View processes in real time.
+
+### Managing Processes
+
+```bash
+kill PID
+```
+
+* `SIGTERM` → Stop gracefully.
+* `SIGKILL` → Kill immediately.
+* `SIGSTOP` → Suspend a process.
+
+### Services
+
+```bash
+systemctl start apache2
+systemctl stop apache2
+systemctl status apache2
+systemctl enable apache2
+systemctl disable apache2
+```
+
+### Background & Foreground
+
+```text
+&        → Run in background
+Ctrl + Z → Suspend a process
+fg       → Bring it to foreground
+```
+
+**Key idea:** Linux manages running programs as processes, each with its own PID.
+# Linux Cron Jobs
+
+* **Cron** → Runs scheduled tasks automatically.
+* **Crontab** → File used to schedule cron jobs.
+
+A crontab uses 6 values:
+
+```text id="0b0a4f"
+MIN HOUR DOM MON DOW CMD
+```
+
+| Value  | Meaning            |
+| ------ | ------------------ |
+| `MIN`  | Minute             |
+| `HOUR` | Hour               |
+| `DOM`  | Day of month       |
+| `MON`  | Month              |
+| `DOW`  | Day of week        |
+| `CMD`  | Command to execute |
+
+### Wildcard `*`
+
+`*` means **any value**.
+
+Example:
+
+```bash id="5z6gkq"
+0 */12 * * * cp -R /home/cmnatic/Documents /var/backups/
+```
+
+This runs the backup command every **12 hours**.
+
+### Edit Crontab
+
+```bash id="6q7w2e"
+crontab -e
+```
+
+This opens the crontab for editing.
+
+## Key Takeaways
+
+* `cron` → Manages scheduled tasks.
+* `crontab` → Contains scheduled jobs.
+* `*` → Any value.
+* `crontab -e` → Edit the crontab.
+# APT & Software Repositories
+
+* **APT** → Manages software and packages on Ubuntu.
+* **Repository** → A source where software packages and updates are stored.
+* **GPG key** → Helps verify that software comes from a trusted source.
+
+### Common Commands
+
+```bash id="j9k3mz"
+apt update
+apt install software-name
+apt remove software-name
+```
+
+* `apt update` → Update the package lists.
+* `apt install` → Install software.
+* `apt remove` → Remove software.
+
+### Adding Repositories
+
+```bash id="w2n8qp"
+add-apt-repository
+```
+
+After adding a repository:
+
+```bash id="x4r7vt"
+apt update
+```
+
+**Key idea:** APT is used to install, update, and remove software from trusted repositories.
+# Linux Log Files
+
+* Linux stores most log files in:
+
+```bash
+/var/log
+```
+
+* Logs contain information about applications, services, the operating system, and user activity.
+* Linux can automatically manage old logs through **log rotation**.
+
+### Important Logs
+
+* **Apache2** → Web server logs.
+* **Fail2ban** → Logs suspicious activity such as brute-force attempts.
+* **UFW** → Firewall logs.
+
+### Web Server Logs
+
+Two important types are:
+
+* **Access log** → Records requests made to the web server.
+* **Error log** → Records errors and problems.
+
+Logs are useful for:
+
+* Monitoring system health.
+* Troubleshooting problems.
+* Investigating suspicious activity.
+* Detecting possible attacks.
+
+**Key takeaway:** `/var/log` is an important place to look when investigating what is happening on a Linux system.

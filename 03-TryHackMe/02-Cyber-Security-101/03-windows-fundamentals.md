@@ -83,3 +83,4 @@ BitLocker.:encryption can you enable on Pro that you can't enable in Home
 * **System32** = contains important files critical to Windows.
 * ⚠️ Deleting files from **System32** can make Windows **inoperational**.
 * Many tools used in **Windows Fundamentals** are located in **System32**.
+---------------------

@@ -84,3 +84,36 @@ BitLocker.:encryption can you enable on Pro that you can't enable in Home
 * ⚠️ Deleting files from **System32** can make Windows **inoperational**.
 * Many tools used in **Windows Fundamentals** are located in **System32**.
 ---------------------
+# Windows User Account Control (UAC)
+
+## What is UAC?
+User Account Control (UAC) is a Windows security feature that helps prevent unauthorized changes to the operating system by controlling the use of elevated privileges.
+
+## Administrator vs. Standard User
+- **Administrator:** Can perform administrative tasks, such as installing software and changing system settings.
+- **Standard User:** Has limited permissions and may need administrator credentials to perform administrative tasks.
+
+## How Does UAC Work?
+- Even when logged in with an administrator account, applications do not always run with elevated privileges.
+- When an application requires administrative privileges, Windows may display a UAC prompt.
+- The user must approve the operation or provide administrator credentials, depending on the account type and UAC settings.
+- If the required approval or credentials are not provided, the operation will not proceed.
+
+## UAC Shield Icon
+The shield icon on a program indicates that it may require elevated privileges to run.
+
+## UAC and Malware
+UAC helps reduce security risks by making it harder for malicious software to perform administrative tasks without user approval or administrator credentials.
+
+## Built-in Administrator Account
+By default, the built-in local Administrator account behaves differently from regular administrator accounts because Admin Approval Mode is disabled for it by default.
+
+## Practical Example
+1. Log in as a Standard User.
+2. Try to install a program that requires administrative privileges.
+3. A UAC prompt appears.
+4. Enter the required Administrator credentials.
+5. If valid credentials are provided, the installation can continue. Otherwise, it will not proceed.
+
+## Key Takeaway
+UAC helps protect Windows by requiring approval or administrator credentials when an operation needs elevated privileges.
